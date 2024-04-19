@@ -28,3 +28,17 @@ for celba in lista:
     if celba.nagydij == 'Magyar Nagydíj':
         if celba.celbaErt == 'I':
             print(f'{celba.datum}: {celba.hely} helyezés')
+
+print('5. feladat: Hibastatisztika')
+
+hibak = {}
+
+for hiba in lista:
+    if hiba.hibaOk not in hibak.keys():
+        hibak[hiba.hibaOk] = 1
+    else:
+        hibak[hiba.hibaOk] += 1
+
+for k, v in hibak.items():
+    if v > 1:
+        print(f'{k}: {v}')
